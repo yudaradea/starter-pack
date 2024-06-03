@@ -2,8 +2,11 @@
 
 <x-modal :id="$id" :maxWidth="$maxWidth" {{ $attributes }}>
     <div class="px-6 py-4">
-        <div class="text-lg font-medium text-gray-900">
-            {{ $title }}
+        <div class="flex items-center justify-between pb-4 border-b-2">
+            <div class="text-lg font-medium text-gray-900">
+                {{ $title }}
+            </div>
+            <x-button-close-modal />
         </div>
 
         <div class="mt-4 text-sm text-gray-600">
@@ -11,7 +14,7 @@
         </div>
     </div>
 
-    <div class="flex flex-row justify-end px-6 py-4 bg-gray-100 text-end">
+    <div class="flex flex-row justify-end px-6 py-4 mt-4 bg-gray-100 text-end">
         {{ $footer }}
     </div>
 </x-modal>

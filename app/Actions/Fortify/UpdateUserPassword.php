@@ -6,7 +6,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Laravel\Fortify\Contracts\UpdatesUserPasswords;
-use Masmerise\Toaster\Toaster;
+
 
 class UpdateUserPassword implements UpdatesUserPasswords
 {

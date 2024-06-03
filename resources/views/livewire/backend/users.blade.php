@@ -4,6 +4,8 @@
             <div class="flex items-center justify-between">
                 <h1 class="font-semibold md:text-lg text-text-primary">Users List</h1>
                 <button
+                    wire:loading.attr="disabled"
+                    wire:click="confirmUserAdd"
                     class="px-6 py-2 text-sm text-white transition-colors duration-200 bg-blue-500 rounded-lg shadow-md hover:bg-blue-700"
                 >
                     Add User
@@ -12,8 +14,8 @@
             <div>
                 <section class="mt-8 mb-10">
                     <!-- Start coding here -->
-                    <div class="dark:bg-gray-800 relative sm:rounded-lg overflow-hidden">
-                        <div class="flex flex-col md:flex-row items-center justify-between d p-4 gap-4 md:gap-0">
+                    <div class="relative overflow-hidden dark:bg-gray-800 sm:rounded-lg">
+                        <div class="flex flex-col items-center justify-between gap-4 p-4 md:flex-row d md:gap-0">
                             <div class="flex items-center gap-4">
                                 <div class="relative w-full">
                                     <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -34,16 +36,16 @@
                                     <input
                                         wire:model.live.debounce.300ms="search"
                                         type="text"
-                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2"
+                                        class="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-primary-500 focus:border-primary-500"
                                         placeholder="Search"
                                         required=""
                                     />
                                 </div>
 
-                                <div class="flex space-x-4 items-center w-24">
+                                <div class="flex items-center w-24 space-x-4">
                                     <select
                                         wire:model.live="perPage"
-                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2"
+                                        class="block w-full p-2 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
                                     >
                                         <option value="10">10</option>
                                         <option value="20">20</option>
@@ -53,7 +55,7 @@
                                 </div>
                             </div>
                             <div class="flex space-x-2">
-                                <div class="flex space-x-2 items-center">
+                                <div class="flex items-center space-x-2">
                                     <label class="w-40 text-sm font-medium text-gray-900">User Type :</label>
                                     <select
                                         wire:model.live="shortRole"
@@ -95,17 +97,19 @@
                                                 {{ $user->roles->pluck('name')[0] ?? '' }}
                                             </td>
                                             <td class="px-4 py-3">{{ $user->created_at->format('d M Y') }}</td>
-                                            <td class="px-4 py-3 flex items-center gap-2">
+                                            <td class="flex items-center gap-2 px-4 py-3">
                                                 <i
-                                                    class="ti ti-edit bg-blue-600 text-white p-2 rounded-md cursor-pointer"
+                                                    wire:click="confirmUserEdit({{ $user->id }})"
+                                                    class="p-2 text-white bg-blue-600 rounded-md cursor-pointer ti ti-edit"
                                                 ></i>
                                                 <i
-                                                    class="ti ti-trash-x bg-red-600 text-white p-2 rounded-md cursor-pointer"
+                                                    wire:click="confirmUserDelete({{ $user->id }})"
+                                                    class="p-2 text-white bg-red-600 rounded-md cursor-pointer ti ti-trash-x"
                                                 ></i>
                                             </td>
                                         </tr>
                                     @empty
-                                        {{-- <td class="py-3 px-4 text-red-600">Data Not Found</td> --}}
+                                        {{-- <td class="px-4 py-3 text-red-600">Data Not Found</td> --}}
                                     @endforelse
                                 </tbody>
                             </table>
@@ -119,4 +123,10 @@
             </div>
         </div>
     </div>
+
+    <x-backend.users.modal-user-add :roles="$roles" />
+
+    <x-backend.users.modal-user-edit :roles="$roles" :confirmingUserEdit="$confirmingUserEdit" />
+
+    <x-backend.users.modal-user-delete :confirmingUserDelete="$confirmingUserDelete" :userName="$userName" />
 </div>
