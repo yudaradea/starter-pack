@@ -69,8 +69,9 @@ class User extends Authenticatable
         ];
     }
 
-    // public function role(): HasMany
-    // {
-    //     return $this->HasMany(Role::class);
-    // }
+    public function scopeSearch($query, $value)
+    {
+        $query->where('name', 'Like', "%{$value}%")->orWhere('email', 'Like', "%{$value}%");
+    }
+
 }
