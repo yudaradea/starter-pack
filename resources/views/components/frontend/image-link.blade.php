@@ -34,7 +34,6 @@
         <div class="p-0 py-2 card-body">
             <a
                 href="{{ route('admin.dashboard') }}"
-                wire:navigate
                 class="flex gap-2 items-center font-medium px-4 py-1.5 hover:bg-gray-200 text-gray-400"
             >
                 <i class="text-xl ti ti-user"></i>
