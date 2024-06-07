@@ -46,7 +46,7 @@ Ini adalah laravel starter-pack untuk mempersingkat waktu pengerjaan atau pembua
     npm run dev
 
 <h3> Login Admin </h3>
-Email = admin@example.com
+Email = admin@example.com <br />
 Password = password
 
 # Image
