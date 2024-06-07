@@ -27,7 +27,7 @@ class RolePermissionSeeder extends Seeder
             'email' => 'admin@example.com',
         ]);
 
-        User::factory(50)->create()->each(function($user){
+        User::factory(15)->create()->each(function ($user) {
             $user->assignRole('user');
         });
 

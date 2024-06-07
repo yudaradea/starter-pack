@@ -39,7 +39,7 @@ Ini adalah laravel starter-pack untuk mempersingkat waktu pengerjaan atau pembua
 
 ###### Migrate Database
 
-    php artisan migrate --seed
+    php artisan migrate:fresh --seed
 
 ###### Jalankan npm run dev
 
