@@ -15,6 +15,7 @@ Ini adalah laravel starter-pack untuk mempersingkat waktu pengerjaan atau pembua
 7. <a href="https://tailwindcss.com/"> Tailwind Css </a>
 8. <a href="https://preline.co/"> Preline Ui </a>
 9. <a href="https://mattstauffer.com/blog/how-to-set-up-prettier-on-a-laravel-app-to-lint-tailwind-class-order-and-more/"> Prettier Plugin Blade </a>
+10. <a href="https://www.wrappixel.com/templates/spike-free-tailwind-admin-template/"> Template Spike Admin Untuk Backend </a>
 
 # Cara Installasi
 
