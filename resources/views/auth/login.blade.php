@@ -1,4 +1,8 @@
 <x-guest-layout>
+    @section('title')
+        Login
+    @endsection
+
     <x-authentication-card>
         {{--
             <x-slot name="logo">
@@ -7,7 +11,7 @@
         --}}
 
         <div class="flex flex-col items-center justify-center py-6">
-            @include('backend.partials.logo-sidebar')
+            <x-backend.logo href="{{ route('home') }}" />
             <p class="mt-2 text-sm text-center text-gray-400">Admin Login Page</p>
         </div>
         <x-validation-errors class="mb-4" />

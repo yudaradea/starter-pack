@@ -1,4 +1,8 @@
 <div>
+    @section('title')
+        Users
+    @endsection
+
     <div class="card">
         <div class="card-body">
             <div class="flex items-center justify-between">

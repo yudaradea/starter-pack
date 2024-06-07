@@ -2,7 +2,7 @@
 <!-- Start Vertical Layout Sidebar -->
 <!-- ---------------------------------- -->
 <div class="p-4">
-    @include('backend.partials.logo-sidebar')
+    <x-backend.logo href="{{ route('admin.dashboard') }}" />
 </div>
 <div class="scroll-sidebar" data-simplebar="">
     <nav class="flex flex-col w-full px-4 mt-5 sidebar-nav">
@@ -30,14 +30,16 @@
             <!-- Settings -->
 
             <x-backend.navbar.nav-title class="mt-6">Settings</x-backend.navbar.nav-title>
-            <x-backend.navbar.nav-link
-                wire:navigate
-                href="{{ route('admin.users') }}"
-                :active="request()->routeIs('admin.users')"
-            >
-                <i class="text-2xl ti ti-users ps-2"></i>
-                <span>Users</span>
-            </x-backend.navbar.nav-link>
+            @role('admin')
+                <x-backend.navbar.nav-link
+                    wire:navigate
+                    href="{{ route('admin.users') }}"
+                    :active="request()->routeIs('admin.users')"
+                >
+                    <i class="text-2xl ti ti-users ps-2"></i>
+                    <span>Users</span>
+                </x-backend.navbar.nav-link>
+            @endrole
         </ul>
     </nav>
 </div>

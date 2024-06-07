@@ -21,8 +21,6 @@ class Users extends Component
     public $shortRole = "";
     public $current_password;
     public $userName;
-
-
     public $confirmingUserAdd = false;
     public $confirmingUserEdit = false;
     public $confirmingUserDelete = false;
@@ -91,11 +89,13 @@ class Users extends Component
     public function render()
     {
         $users = User::Search($this->search)
+            ->join('model_has_roles', 'users.id', '=', 'model_has_roles.model_id')
+            ->join('roles', 'model_has_roles.role_id', '=', 'roles.id')
+            ->select('users.*')
             ->when($this->shortRole !== '', function ($query) {
-                $query->whereHas("roles", function ($q) {
-                    $q->where("name", $this->shortRole);
-                });
+                $query->where("roles.name", $this->shortRole);
             })
+            ->orderBy('roles.name')
             ->paginate($this->perPage);
 
         $roles = Role::orderBy('id', 'DESC')->get();

@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <!-- Favicon icon-->
-<link rel="shortcut icon" type="image/png" href="@@webRoot/assets/images/logos/favicon.png" />
+<link rel="shortcut icon" type="image/png" href="{{ asset('backend/assets/images/logos/favicon.png') }}" />
 <link
     href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
     rel="stylesheet"

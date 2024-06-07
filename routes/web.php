@@ -4,7 +4,7 @@ use App\Livewire\Backend\Users;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('frontend.pages.home');
 })->name('home');
 
 
@@ -21,6 +21,6 @@ Route::middleware([
         Route::get('about', function () {
             return view('backend.pages.about');
         })->name('about');
-        Route::get('users', Users::class)->name('users');
+        Route::get('users', Users::class)->middleware('role:admin')->name('users');
     });
 });

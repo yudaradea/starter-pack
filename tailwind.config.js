@@ -10,6 +10,7 @@ export default {
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
         './vendor/masmerise/livewire-toaster/resources/views/*.blade.php',
+        'node_modules/preline/dist/*.js',
     ],
     darkMode: 'false',
 
@@ -23,7 +24,25 @@ export default {
                 'text-primary': '#111c2d',
             },
         },
+        container: {
+            padding: {
+                DEFAULT: '20px',
+                // lg: "50px",
+                sm: '2rem',
+                lg: '4rem',
+                xl: '5rem',
+                '2xl': '6rem',
+            },
+            screens: {
+                sm: '600px',
+                md: '728px',
+                lg: '984px',
+                xl: '1240px',
+                '2xl': '1496px',
+            },
+            center: true,
+        },
     },
 
-    plugins: [forms, typography],
+    plugins: [forms, typography, require('preline/plugin')],
 };

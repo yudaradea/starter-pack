@@ -1,66 +1,88 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# automation-with-chatgpt
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+The goal of this project is to offer ordinary users the opportunity to utilize AI technology without incurring any expenses.
+While there are free alternatives available, they often require users to rely on different applications.
+This platform aims to allow users to seamlessly utilize AI capabilities across various applications, eliminating the need for manual copy and paste actions.
 
-## About Laravel
+The objective of this project is to automat the work through the implementation of ChatGPT Integration.
+This is achieved by integrating ChatGPT with AutoHotKey (https://www.autohotkey.com/) to facilitate the triggering of integration flows through keyboard shortcuts.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+A potential application for this feature is the ability to rephrase text within various applications, such as web browsers, gmail, outlook or any app equipped with a text editor.
+For instance, the entirety of the text you are currently reading has been rephrased through the utilization of this particular project.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+# Minimum requirements:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+-   Windows operating system (Will add for MacOS soon)
+-   AutoHotKey software
+-   SpringBoot application from this repo (to be eliminated in the future)
+-   In order for the SpringBoot Integration App to be authenticated by the ChatGPT API, it is required to configure the ChatGPT authentication key as an environment variable "spring.ai.openai.api-key". Additional details will be provided in the subsequent sections.
 
-## Learning Laravel
+# How to run or setup
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+1. Begin by installing the AutoHotKey software (https://www.autohotkey.com/) on your Windows system.
+2. Execute the script located at .\scripts\autohotkey\AI.ahk.
+3. Launch the SpringBoot application included within this repository. Additional information is provided below for initializing a Spring Boot application.
+4. Select the specific text that you wish to rephrase from any text editor.
+5. Utilize the designated key (F3, which can be customized in the AI.ahk script) to initiate the rephrasing process.
+6. If needed, revert back to the original text by pressing CTRL+Z (undo).
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+# Key Mappings
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+F3 - rephrase the selected text in a professional manner.
 
-## Laravel Sponsors
+# Caution
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+This will overwrite your current clipboard contents.
+Enabling multiple clipboards is recommended to avoid overwriting your current clipboard contents.
 
-### Premium Partners
+# Current flow
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+      App's text editor > AutoHotKey > SprintBoot Integration >  ChatGPT APIs
 
-## Contributing
+# Planned Flow
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+      App's text editor > AutoHotKey >  ChatGPT APIs
 
-## Code of Conduct
+# Note
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+The F3 key now includes the capability to rephrase text in a professional manner. Additional features will be added in the near future.
 
-## Security Vulnerabilities
+# Starting SpringBoot App
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+A pre-built standalone executable JAR file can be found at the specified location "target/myai-0.0.1-SNAPSHOT.jar".
 
-## License
+Please ensure that the environment variable is set accordingly. You can use below command on windows cmd
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+######
+
+    set spring.ai.openai.api-key=<your generated OpenAI authentication token here>
+
+
+
+Then run below cammand to start SrpingBoot prject
+
+######
+
+    java -jar .\target\myai-0.0.1-SNAPSHOT.jar
+
+
+Java Enviroment used
+
+###### java -version
+
+    openjdk version "17.0.10" 2024-01-16
+    OpenJDK Runtime Environment Temurin-17.0.10+7 (build 17.0.10+7)
+    OpenJDK 64-Bit Server VM Temurin-17.0.10+7 (build 17.0.10+7, mixed mode
+
+
+In the event of encountering a Java version error, it is recommended to regenerate the JAR file utilizing either Maven or Gradle.
+
+# OpenAI Signup & token
+
+Create an account at OpenAI Signup : https://platform.openai.com/signup
+
+Please generate the token for storage as an environment variable "spring.ai.openai.api-key" from this location - https://platform.openai.com/account/api-keys
+
+# Facing issue
+
+Please leave a comment detailing the issue, and I will gladly investigate further.
