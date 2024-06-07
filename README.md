@@ -37,6 +37,10 @@ Ini adalah laravel starter-pack untuk mempersingkat waktu pengerjaan atau pembua
 
     php artisan key:generate
 
+###### Migrate Database
+
+    php artisan migrate --seed
+
 ###### Jalankan npm run dev
 
     npm run dev
