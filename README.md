@@ -45,6 +45,10 @@ Ini adalah laravel starter-pack untuk mempersingkat waktu pengerjaan atau pembua
 
     npm run dev
 
+<h3> Login Admin </h3>
+Email = admin@example.com
+Password = password
+
 # Image
 
 ![login](https://github.com/yudaradea/starter-pack/assets/117655878/bbd66332-49c2-4526-8365-869fc9c04bb1)
