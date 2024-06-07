@@ -1,88 +1,41 @@
-# automation-with-chatgpt
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-The goal of this project is to offer ordinary users the opportunity to utilize AI technology without incurring any expenses.
-While there are free alternatives available, they often require users to rely on different applications.
-This platform aims to allow users to seamlessly utilize AI capabilities across various applications, eliminating the need for manual copy and paste actions.
+# <summary><strong>Hi there :wave: , I'm Goo!</strong></summary>
 
-The objective of this project is to automat the work through the implementation of ChatGPT Integration.
-This is achieved by integrating ChatGPT with AutoHotKey (https://www.autohotkey.com/) to facilitate the triggering of integration flows through keyboard shortcuts.
+Ini adalah laravel starter-pack untuk mempersingkat waktu pengerjaan atau pembuatan web/aplikasi menggunakan laravel.
 
-A potential application for this feature is the ability to rephrase text within various applications, such as web browsers, gmail, outlook or any app equipped with a text editor.
-For instance, the entirety of the text you are currently reading has been rephrased through the utilization of this particular project.
+# Teknologi yang digunakan
 
-# Minimum requirements:
+1. <a href="https://laravel.com/"> Laravel V 11 </a>
+2. <a href="https://livewire.laravel.com/"> Laravel Livewire </a>
+3. <a href="https://jetstream.laravel.com/introduction.html"> Laravel Jetstream </a>
+4. <a href="https://spatie.be/docs/laravel-permission/v6/installation-laravel"> Laravel Spatie </a>
+5. <a href="https://github.com/yoeunes/toastr"> Yoeunes Toastr </a>
+6. <a href="https://alpinejs.dev/"> Alpine Js </a>
+7. <a href="https://tailwindcss.com/"> Tailwind Css </a>
+8. <a href="https://preline.co/"> Preline Ui </a>
+9. <a href="https://mattstauffer.com/blog/how-to-set-up-prettier-on-a-laravel-app-to-lint-tailwind-class-order-and-more/"> Prettier Plugin Blade </a>
 
--   Windows operating system (Will add for MacOS soon)
--   AutoHotKey software
--   SpringBoot application from this repo (to be eliminated in the future)
--   In order for the SpringBoot Integration App to be authenticated by the ChatGPT API, it is required to configure the ChatGPT authentication key as an environment variable "spring.ai.openai.api-key". Additional details will be provided in the subsequent sections.
+# Cara Installasi
 
-# How to run or setup
+###### download file
 
-1. Begin by installing the AutoHotKey software (https://www.autohotkey.com/) on your Windows system.
-2. Execute the script located at .\scripts\autohotkey\AI.ahk.
-3. Launch the SpringBoot application included within this repository. Additional information is provided below for initializing a Spring Boot application.
-4. Select the specific text that you wish to rephrase from any text editor.
-5. Utilize the designated key (F3, which can be customized in the AI.ahk script) to initiate the rephrasing process.
-6. If needed, revert back to the original text by pressing CTRL+Z (undo).
+    git clone https://github.com/yudaradea/starter-pack.git
 
-# Key Mappings
+-   Buatlah file dengan nama .env copy semua kode dari file .env.example kedalam file .env yang baru dibuat kemudian sesuaikan url website nama website dan jangan lupa databasenya.
 
-F3 - rephrase the selected text in a professional manner.
+###### Install semua laravel package
 
-# Caution
+    composer install
 
-This will overwrite your current clipboard contents.
-Enabling multiple clipboards is recommended to avoid overwriting your current clipboard contents.
+###### Install semua node package
 
-# Current flow
+    composer install
 
-      App's text editor > AutoHotKey > SprintBoot Integration >  ChatGPT APIs
+###### Generate App Key
 
-# Planned Flow
+    php artisan key:generate
 
-      App's text editor > AutoHotKey >  ChatGPT APIs
+###### Jalankan npm run dev
 
-# Note
-
-The F3 key now includes the capability to rephrase text in a professional manner. Additional features will be added in the near future.
-
-# Starting SpringBoot App
-
-A pre-built standalone executable JAR file can be found at the specified location "target/myai-0.0.1-SNAPSHOT.jar".
-
-Please ensure that the environment variable is set accordingly. You can use below command on windows cmd
-
-######
-
-    set spring.ai.openai.api-key=<your generated OpenAI authentication token here>
-
-
-
-Then run below cammand to start SrpingBoot prject
-
-######
-
-    java -jar .\target\myai-0.0.1-SNAPSHOT.jar
-
-
-Java Enviroment used
-
-###### java -version
-
-    openjdk version "17.0.10" 2024-01-16
-    OpenJDK Runtime Environment Temurin-17.0.10+7 (build 17.0.10+7)
-    OpenJDK 64-Bit Server VM Temurin-17.0.10+7 (build 17.0.10+7, mixed mode
-
-
-In the event of encountering a Java version error, it is recommended to regenerate the JAR file utilizing either Maven or Gradle.
-
-# OpenAI Signup & token
-
-Create an account at OpenAI Signup : https://platform.openai.com/signup
-
-Please generate the token for storage as an environment variable "spring.ai.openai.api-key" from this location - https://platform.openai.com/account/api-keys
-
-# Facing issue
-
-Please leave a comment detailing the issue, and I will gladly investigate further.
+    npm run dev
