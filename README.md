@@ -40,3 +40,15 @@ Ini adalah laravel starter-pack untuk mempersingkat waktu pengerjaan atau pembua
 ###### Jalankan npm run dev
 
     npm run dev
+
+# Image
+
+![login](https://github.com/yudaradea/starter-pack/assets/117655878/bbd66332-49c2-4526-8365-869fc9c04bb1)
+
+![register](https://github.com/yudaradea/starter-pack/assets/117655878/43c07456-0692-4bcc-9063-3cf89ea0f8c6)
+
+![dashboard](https://github.com/yudaradea/starter-pack/assets/117655878/54f90ed1-5746-4313-926f-1f7b6a18b950)
+
+![profile](https://github.com/yudaradea/starter-pack/assets/117655878/ae8596c6-ea12-4237-91d4-7bce0eea0cd9)
+
+![users](https://github.com/yudaradea/starter-pack/assets/117655878/b7695d0e-f30f-4e29-a95b-77259c169b20)
